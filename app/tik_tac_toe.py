@@ -96,7 +96,7 @@ class TicTakToe:
         for _player, _symbol in self._players_symbol_map.items():
             if self.is_player_winner(_player, _symbol):
                 is_winner_found = True
-                print(f"Congrations !!! {_player} Won !!!")
+                print(f"Congratulations !!! {_player} Won !!!")
                 break
         if is_winner_found:
             return True
