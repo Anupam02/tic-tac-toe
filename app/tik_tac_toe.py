@@ -68,10 +68,14 @@ class TicTakToe:
 
             self._players_symbol_map[_player_name] = _player_symbol
 
-    def reset_board(self, symbol: Optional[str] = " ") -> None:
+    def _reset_data(self) -> None:
+        """ Reset data for the object
+        :return: None
+        """
         for r in range(self._nrow):
             for c in range(self._ncol):
-                self._board[r][c] = symbol
+                self._board[r][c] = self._default_symbol
+        self._players_symbol_map = dict()
 
     def is_player_winner(self, player: str, symbol: str) -> bool:
         if all(item == symbol for item in self._board[0, :]) or \
@@ -99,6 +103,8 @@ class TicTakToe:
         return False
 
     def start(self):
+        # reset data if not done already
+        self._reset_data()
         self._display_board()
         self._accept_players()
         players = list(self._players_symbol_map.keys())
