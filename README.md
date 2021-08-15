@@ -20,6 +20,11 @@ There are multple ways to take input from players, but in my current project I a
 
 (2, 0) | (2, 1) | (2, 2)
 
+## installation 
+#### create an image with name tic-tac-toe, it would build the image with all dependency present in requirements.txt
+` docker build tic-tac-toe:latest`
+#### run it with
+` docker run -it tic-tac-toe:latest python main.py`
 
 ## How to Contribute
 
