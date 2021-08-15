@@ -3,6 +3,8 @@ import numpy as np
 import re
 
 from typing import Optional
+from random import sample
+from itertools import product
 
 
 class TicTakToe:
@@ -143,4 +145,28 @@ class TicTakToe:
                 print(f"Hey {players[0]} and {players[1]}, you both played well, Its a Tie.")
                 break
 
-
+    def automated_start(self):
+        # reset data if not done already
+        self._reset_data()
+        self._display_board()
+        self._players_symbol_map['Bot1'] = 'O'
+        self._players_symbol_map['Bot2'] = 'X'
+        players = list(self._players_symbol_map.keys())
+        count = 0
+        player_in_queue = players[count]
+        player_in_queue_symbol = self._players_symbol_map[player_in_queue]
+        coords = list(product(range(0, self._nrow), range(0, self._ncol)))
+        coords_sample = sample(coords, self._nrow*self._ncol)
+        for coordinates in coords_sample:
+            r, c = coordinates
+            print(f"{player_in_queue} selected ({r}, {c})")
+            self._board[r][c] = player_in_queue_symbol
+            self._display_board()
+            if self.is_player_winner(player_in_queue, player_in_queue_symbol):
+                print(f"Congratulations !!! {player_in_queue} :) You Won.")
+                break
+            count += 1
+            player_in_queue = players[count % self._nplayer]
+            player_in_queue_symbol = self._players_symbol_map[player_in_queue]
+        if count >= self._nrow * self._ncol:
+            print(f"Hey {players[0]} and {players[1]}, you both played well, Its a Tie.")
