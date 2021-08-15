@@ -22,9 +22,9 @@ There are multple ways to take input from players, but in my current project I a
 
 ## installation 
 #### create an image with name tic-tac-toe, it would build the image with all dependency present in requirements.txt
-` docker build tic-tac-toe:latest`
+` docker build tic-tac-toe:v1.0`
 #### run it with
-` docker run -it tic-tac-toe:latest python main.py`
+` docker run -it tic-tac-toe:v1.0 python main.py --game-mode manual/bot`
 
 ## How to Contribute
 
