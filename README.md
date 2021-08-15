@@ -11,9 +11,13 @@ This starts with 2 players , firstly by asking their names and choosing their sy
 There are multple ways to take input from players, but in my current project I am taking input as x coordinates, y coordinates
 
 (0, 0) | (0, 1) | (0, 2)
-************************
+
++++++++++++++++
+
 (1, 0) | (1, 1) | (1, 2)
-************************
+
++++++++++++++++
+
 (2, 0) | (2, 1) | (2, 2)
 
 
