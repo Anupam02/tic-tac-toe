@@ -25,7 +25,9 @@ There are multple ways to take input from players, but in my current project I a
 ` docker build tic-tac-toe:v1.0`
 #### run it with
 ` docker run -it tic-tac-toe:v1.0 python main.py --game-mode manual/bot`
-
+### to run automated mode with computer( minimax algorithm)
+### tkinter should be installed [ sudo apt install python3-tk]
+` python main.py --game-mode min-max`
 ## How to Contribute
 
 ### Submitting an issue

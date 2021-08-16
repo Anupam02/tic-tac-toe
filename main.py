@@ -1,11 +1,12 @@
 from app.tik_tac_toe import TicTakToe
+from app.min_max_tik_tac_toe import GUI
 import click
 
 
 @click.command()
 @click.option('--game-mode',
               '-gm',
-              type=click.Choice(['manual', 'bot'], case_sensitive=False),
+              type=click.Choice(['manual', 'bot', 'min-max'], case_sensitive=False),
               help='game mode to run [ manual / bot]',
               required=True)
 def main(game_mode):
@@ -14,12 +15,13 @@ def main(game_mode):
             manual_play()
         elif game_mode == 'bot':
             automatic_play()
+        elif game_mode == 'min-max':
+            min_max_play()
         else:
             print('Invalid Option')
 
     except Exception as e:
         print(e)
-
 
 
 def manual_play():
@@ -40,9 +42,14 @@ def manual_play():
             else:
                 print("Please select any one of [ yes / no | y / n] ..")
 
+
 def automatic_play():
     tc = TicTakToe()
     tc.automated_start()
+
+
+def min_max_play():
+    GUI().mainloop()
 
 
 if __name__ == '__main__':
