@@ -1,7 +1,7 @@
 This is a simple tic tac toe implementation in Python with Command Line interface, It takes a 3 x 3 matrix with 2 players.
 
-- What is the aim of this project?<br>
-This is more of a take home assignment, I created this as part of interview process with [colearn](https://colearn.co/)
+- What is the aim of this project for?
+This is to implement a tic tac toe with 3 approaches , manual/bot/minimax algorithm
 
 
 - What is the default game configuration?<br>
